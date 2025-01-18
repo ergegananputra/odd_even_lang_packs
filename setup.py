@@ -1,5 +1,8 @@
 from setuptools import setup, find_packages
 
+with open("README.md", "r", encoding="utf-8") as fh:
+    long_description = fh.read()
+
 setup(
     name="odd_even_lang_packs",
     version="1.0",
@@ -10,7 +13,8 @@ setup(
     author="Adiel Boanerge Gananputra",
     author_email="ergegananputra@gmail.com",
     description="Language packs for the Odd Even application",
-    long_description="This repository contains language packs for the Odd Even application. These language packs provide translations for various languages to enhance the user experience.",
+    long_description=long_description,
+    long_description_content_type="text/markdown",
     url="https://github.com/ergegananputra/odd_even_lang_packs",
     classifiers=[
         "Programming Language :: Python :: 3",
