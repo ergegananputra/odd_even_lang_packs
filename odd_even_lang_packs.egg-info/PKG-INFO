@@ -1,0 +1,20 @@
+Metadata-Version: 2.2
+Name: odd_even_lang_packs
+Version: 0.5
+Summary: Language packs for the Odd Even application
+Home-page: https://github.com/ergegananputra/odd_even_lang_packs
+Author: Adiel Boanerge Gananputra
+Author-email: ergegananputra@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: home-page
+Dynamic: requires-python
+Dynamic: summary
+
+This repository contains language packs for the Odd Even application. These language packs provide translations for various languages to enhance the user experience.
