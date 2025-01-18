@@ -7,3 +7,19 @@
 ./.idea
 */__pycache__
 *.pyc
+
+/local_settings
+
+# Ignore build artifacts
+dist/
+build/
+*.egg-info/
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore virtual environments
+venv/
+.env/

@@ -1,5 +1,5 @@
 import unittest
-from main import OddEvenLangPacks
+from odd_even_lang_packs.main import OddEvenLangPacks
 
 class TestOddEvenLangPacks(unittest.TestCase):
 
