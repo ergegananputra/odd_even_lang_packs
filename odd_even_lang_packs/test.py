@@ -8,11 +8,11 @@ class TestOddEvenLangPacks(unittest.TestCase):
 
     def test_changeLanguage_valid(self):
         self.oddEven.changeLanguage("ID")
-        self.assertEqual(self.oddEven.language, "ID")
+        self.assertEqual(self.oddEven.getLanguage(), "ID")
 
     def test_changeLanguage_invalid(self):
         self.oddEven.changeLanguage("XX")
-        self.assertEqual(self.oddEven.language, "EN")
+        self.assertEqual(self.oddEven.getLanguage(), "EN")
 
     def test_check_EN(self):
         self.assertEqual(self.oddEven.check(1), "odd")
@@ -33,6 +33,15 @@ class TestOddEvenLangPacks(unittest.TestCase):
     def test_isEven(self):
         self.assertTrue(self.oddEven.isEven(2))
         self.assertFalse(self.oddEven.isEven(1))
+
+    def test_getLanguage(self):
+        self.assertEqual(self.oddEven.getLanguage(), "EN")
+
+    def test_getLanguageCodes(self):
+        self.assertEqual(type(self.oddEven.getLanguageCodes()), list)
+
+    def test_getLanguageCodesAndFullNames(self):
+        self.assertEqual(type(self.oddEven.getLanguageCodesAndFullNames()), dict)
 
 if __name__ == '__main__':
     unittest.main()

@@ -12,7 +12,7 @@ class OddEvenLangPacks:
         isEven: Check if a number is
     """
     def __init__(self, language : str = "EN") -> None:
-        self.lang_lists = {
+        self.__lang_lists = {
             "EN" : ["eovdedn", 0, "English"],
             "ID" : ["ggaennjaipl", 1, "Indonesia"],
         }
@@ -25,12 +25,12 @@ class OddEvenLangPacks:
             language (str): language code
         """
         try:
-            assert language in self.lang_lists
+            assert language in self.__lang_lists
         except AssertionError:
             print(f"Language {language} not found")
             return None
 
-        self.language = language
+        self.__language = language
 
     def check(self, x : int) -> str:
         """Check if a number is odd or even and return the corresponding word
@@ -41,7 +41,7 @@ class OddEvenLangPacks:
         Returns:
             str: odd or even in the selected language
         """
-        lang, prefix, _ = self.lang_lists[self.language]
+        lang, prefix, _ = self.__lang_lists[self.__language]
         return lang[((x + prefix) % 2)::2]
     
     def checks(self, arr : list) -> list[str]:
@@ -77,3 +77,26 @@ class OddEvenLangPacks:
         """
         return x % 2 == 0
 
+    def getLanguage(self) -> str:
+        """Get the current language
+
+        Returns:
+            str: language code
+        """
+        return self.__language
+    
+    def getLanguageCodes(self) -> list[str]:
+        """Get the list of available language codes
+
+        Returns:
+            list[str]: list of language codes
+        """
+        return list(self.__lang_lists.keys())
+    
+    def getLanguageCodesAndFullNames(self) -> dict[str, str]:
+        """Get the list of available language codes and full names
+
+        Returns:
+            dict[str, str]: dictionary of language codes and full names
+        """
+        return {code : self.__lang_lists[code][2] for code in self.__lang_lists}

@@ -1,3 +1,9 @@
 ./.venv
+.venv
+./.vscode
+.vscode
+./.vs
+.vs
+./.idea
 */__pycache__
 *.pyc
