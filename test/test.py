@@ -6,6 +6,11 @@ class TestOddEvenLangPacks(unittest.TestCase):
     def setUp(self):
         self.oddEven = OddEvenLangPacks("EN")
 
+    def __lang_test_check(self, langCode : str, odd : str, even : str):
+        self.oddEven.changeLanguage(langCode.upper())
+        self.assertEqual(self.oddEven.check(1), odd.lower())
+        self.assertEqual(self.oddEven.check(2), even.lower())
+
     def test_changeLanguage_valid(self):
         self.oddEven.changeLanguage("ID")
         self.assertEqual(self.oddEven.getLanguage(), "ID")
@@ -15,13 +20,16 @@ class TestOddEvenLangPacks(unittest.TestCase):
         self.assertEqual(self.oddEven.getLanguage(), "EN")
 
     def test_check_EN(self):
-        self.assertEqual(self.oddEven.check(1), "odd")
-        self.assertEqual(self.oddEven.check(2), "even")
+        # English for odd and even
+        self.__lang_test_check("EN", odd="odd", even="even")
 
     def test_check_ID(self):
-        self.oddEven.changeLanguage("ID")
-        self.assertEqual(self.oddEven.check(1), "ganjil")
-        self.assertEqual(self.oddEven.check(2), "genap")
+        # Indonesian for odd and even
+        self.__lang_test_check("ID", odd="ganjil", even="genap")
+    
+    def test_check_DK(self):
+        # Danish (Denmark) for odd and even
+        self.__lang_test_check("DK", odd="ulige", even="lige")
 
     def test_checks(self):
         self.assertEqual(self.oddEven.checks([1, 2, 3]), ["odd", "even", "odd"])

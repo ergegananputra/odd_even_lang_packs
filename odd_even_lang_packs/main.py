@@ -10,11 +10,15 @@ class OddEvenLangPacks:
         checks: Check a list of numbers if they are odd or even
         isOdd: Check if a number is odd
         isEven: Check if a number is
+        getLanguage: Get the current language
+        getLanguageCodes: Get the list of available language codes
+        getLanguageCodesAndFullNames: Get the list of available language codes and full names
     """
     def __init__(self, language : str = "EN") -> None:
         self.__lang_lists = {
             "EN" : ["eovdedn", 0, "English"],
             "ID" : ["ggaennjaipl", 1, "Indonesia"],
+            "DK" : ["ulliiggee", 1, "Danish"],
         }
         self.changeLanguage(language)
 
